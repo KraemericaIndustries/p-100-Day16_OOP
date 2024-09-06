@@ -14,10 +14,9 @@ while go_again:
     choice = input(f"What could you like? ({menu.get_items()}): ").lower()
 
     # 2 COMPLETE! Exit code by entering 'off' at the drink selection prompt...
-    if choice == "off": break
-
     # 3 COMPLETE! When the user enters “report” to the prompt, a report should be generated that shows the current resource values
-    if choice == "report":
+    if choice == "off": break
+    elif choice == "report":
         coffee_maker.report()
         money_machine.report()
     else:
@@ -35,9 +34,5 @@ while go_again:
             enough_money_inserted = money_machine.make_payment(drink.cost)
             if enough_money_inserted:
                 coffee_maker.make_coffee(drink)
-
-    # Exits the go_again while loop
-    if choice == "off":
-        go_again = False
 
 print("END: go_again while loop")
